@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.indigo.shade800 ,
         secondaryHeaderColor: Colors.blueAccent.shade200 ,
         cardColor: Colors.white ,
+        canvasColor: Colors.blue.shade100,
       ),
       home :  HomePage() ,
     );

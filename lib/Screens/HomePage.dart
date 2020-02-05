@@ -179,7 +179,7 @@ class _HomePageState extends State<HomePage> {
                                         ),
                                       ),
                                       new SizedBox(
-                                        height: 40.0,
+                                        height: 10.0,
                                       ),
                                       new Text(
                                         'VALID THRU',
@@ -269,7 +269,7 @@ class _HomePageState extends State<HomePage> {
                                   ));
                         },
                       )),
-                  new SizedBox(height: 20.0),
+                  new SizedBox(height: 50.0),
                   new Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
@@ -314,11 +314,15 @@ class _HomePageState extends State<HomePage> {
               duration: Duration(milliseconds: 800),
               curve: Curves.fastOutSlowIn,
               bottom: appDrawerFromBottom,
-              child: new Container(
+              child: new AnimatedContainer(
+                  duration: Duration(seconds: 1),
+                  curve: Curves.fastOutSlowIn,
                   height: MediaQuery.of(context).size.height / 2,
                   width: MediaQuery.of(context).size.width,
                   decoration: new BoxDecoration(
-                    color: Colors.white,
+                    color: isOpened
+                        ? Theme.of(context).secondaryHeaderColor
+                        : Colors.white,
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(30),
                       topRight: Radius.circular(30),
@@ -350,7 +354,7 @@ class _HomePageState extends State<HomePage> {
                               height: 100.0,
                               margin: const EdgeInsets.all(10.0),
                               decoration: new BoxDecoration(
-                                color: Theme.of(context).secondaryHeaderColor,
+                                color: Theme.of(context).canvasColor,
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
                               padding: const EdgeInsets.all(10.0),
@@ -385,7 +389,7 @@ class _HomePageState extends State<HomePage> {
                                                 fontWeight: FontWeight.w500),
                                           ),
                                           new SizedBox(
-                                            height: 15.0,
+                                            height: 9.0,
                                           ),
                                           new Text(
                                             'next payment',
